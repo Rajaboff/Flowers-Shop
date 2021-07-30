@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="prevTile">
+        <h3>Превью</h3>
+        <div class="items">
+            <div class="pic" [ngStyle]="{'background-image': 'url('+imagePath+')'}"></div>
+            <div class="bottomCard">
+                <div class="info">
+                    <h3>{{title}}</h3>
+                    <input type="number" min="1" [max]="maxCount" [(ngModel)]="count">
+                </div>
+                <button>{{price*count}}$</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="line">
+
+    </div>
+
+    <div class="editTile">
+        <h3>Добавление товара</h3>
+        <div class="titleInput">
+            <p>Заголовок</p>
+            <input class="titleInp" type="text" [(ngModel)]="title" maxlength="12" (change)="changeInfo()">
+        </div>
+        <div class="countInput">
+            <p>Макс. штук</p>
+            <input class="countInp" min="1" type="number" [(ngModel)]="maxCount" (change)="changeInfo()">
+        </div>
+        <div class="priceInput">
+            <p>Цена</p>
+            <input class="priceInp" min="1" type="number" [(ngModel)]="price" (change)="changeInfo()">
+        </div>
+        <div class="fileInput">
+            <input type="file" id="file" (change)="upload($event, btn)" accept="*.png.jpg" (change)="changeInfo()">
+            <label for="file" #btn>{{fileText}}</label>
+            <button (click)="uploadImage()" class="addItem" *ngIf="!added">Добавить</button>
+            <button class="addedItem" *ngIf="added">{{progress}}</button>
+        </div>
+
+    </div>
+</div>

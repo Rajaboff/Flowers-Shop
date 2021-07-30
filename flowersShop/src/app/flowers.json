@@ -1,0 +1,6 @@
+{
+    "flowers": [
+        { "id": 1, "title": "Красная роза", "count": 1, "totalCount": 0, "price": 4, "sel": false },
+        { "id": 2, "title": "Букет пионов", "count": 1, "totalCount": 0, "price": 24, "sel": false }
+    ]
+}

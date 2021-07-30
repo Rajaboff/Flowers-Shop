@@ -1,0 +1,7 @@
+<div class="container">
+    <app-header [totalPrice]="totalPrice" (addingCl)="addingClick($event)" (cartCl)="cartClick($event)" (backCl)="backClick($event)" [editing]="editing"></app-header>
+    <app-main (addCart)="addToCart($event)" (editingCl)="editingClick($event)" [flowers]="flowers" *ngIf="!cart && !adding && !editing"></app-main>
+    <app-cart (countItem)="changeCount()" (delItem)="delItem($event)" [listFlower]="flowers" [totalPrice]="totalPrice" *ngIf="cart"></app-cart>
+    <app-adding *ngIf="adding" [flowers]="flowers" [id]="id"></app-adding>
+    <app-editing *ngIf="editing" [flower]="curFlower" (deleted)="deleted($event)"></app-editing>
+</div>

@@ -1,0 +1,77 @@
+* {
+    transition: 0.2s all;
+}
+
+.container {
+    height: 150px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 19px 0 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+#logo {
+    height: 80px;
+}
+
+.cartBtn {
+    background-color: rgb(226, 71, 71);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 18px 25px;
+    border-radius: 8px;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 40px;
+    font-weight: 400;
+}
+
+.cartBtn:hover {
+    background-color: rgb(204, 64, 64);
+}
+
+.addBtn,
+.backBtn {
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    padding: 18px 25px;
+    border-radius: 8px;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+.cartBtn>img {
+    width: 20px;
+    margin-right: 20px;
+}
+
+.addBtn>img {
+    margin-right: 20px;
+}
+
+.btns {
+    display: flex;
+}
+
+.btns>div {
+    margin-left: 25px;
+}
+
+.addBtn:hover,
+.backBtn:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+}

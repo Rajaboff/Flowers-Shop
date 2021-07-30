@@ -1,0 +1,54 @@
+<div class="container">
+
+    <div class="payBtn">
+        <h1>Корзина</h1>
+        <button><span>Общая сумма:</span> &nbsp; &nbsp; {{totalPrice}}$</button>
+    </div>
+
+    <div class="cartList">
+
+        <div class="cartCol">
+            <div>
+                <div class="imgPrev">
+                    <p>Превью</p>
+                </div>
+                <div class="title">
+                    <p>Название</p>
+                </div>
+                <div class="count">
+                    <p>Число</p>
+                </div>
+                <div class="price">
+                    <p>Цена</p>
+                </div>
+                <div class="total">
+                    <p>Сумма</p>
+                </div>
+                <div class="remove">
+                    <p>Отмена</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cartCol" *ngFor="let l of listFlower">
+            <div *ngIf="l.sel">
+                <div class="imgPrev">
+                    <div class="prev" [ngStyle]="{'background-image': 'url('+l.urlImg+')'}"></div>
+                </div>
+                <div class="title">
+                    <p>{{l.title}}</p>
+                </div>
+                <div class="count"><input type="number" [value]="l.totalCount" [(ngModel)]="l.totalCount" min="1" [max]="l.maxCount" (change)="changeCount()"></div>
+                <div class="price">
+                    <p>{{l.price}}$</p>
+                </div>
+                <div class="total">
+                    <p>{{l.totalCount*l.price}}$</p>
+                </div>
+                <div class="remove">
+                    <button (click)="delFromCart(l)">Убрать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

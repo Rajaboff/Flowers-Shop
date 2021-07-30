@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="items" *ngFor="let flower of (flowers | flipArray)">
+        <div (mouseenter)="editBtn(flower, true)" (mouseleave)="editBtn(flower, false)">
+            <div class="pic" [ngStyle]="{'background-image': 'url('+flower.urlImg+')'}">
+                <div class="editBtn" [style.display]="flower.editBtn==true?'flex':'none'" (click)="editingClick(flower); editBtn(flower, false)">
+                    <img src="../../assets/icons/edit.svg">
+                </div>
+            </div>
+            <div class="bottomCard">
+                <div class="info">
+                    <h3>{{flower.title}}</h3>
+                    <input type="number" [value]="flower.count" [max]="flower.maxCount" min="1" [(ngModel)]="flower.count">
+                </div>
+                <button (click)="addToCart(flower)">{{flower.price*flower.count}}$</button>
+            </div>
+        </div>
+    </div>
+</div>

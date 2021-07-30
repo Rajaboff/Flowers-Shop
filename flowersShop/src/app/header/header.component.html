@@ -1,0 +1,17 @@
+<div class="container">
+    <img src="../../assets/icons/logo.png" id="logo">
+    <div class="btns">
+        <button class="addBtn" *ngIf="back && !editing" (click)="addingClick()">
+            <img src="../../assets/icons/add.svg">
+            <p>Добавить</p>
+        </button>
+        <button class="cartBtn" *ngIf="back && !editing" (click)="cartClick()">
+            <img src="../../assets/icons/addToCart.svg">
+            <p>{{totalPrice}}$</p>
+        </button>
+
+        <button class="backBtn" *ngIf="adding || cart || editing" (click)="backClick()">
+            <p>Назад</p>
+        </button>
+    </div>
+</div>
